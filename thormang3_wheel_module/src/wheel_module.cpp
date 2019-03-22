@@ -245,8 +245,9 @@ void WheelModule::wheelPoseMsgCallback(const std_msgs::String::ConstPtr& msg)
 {
   if (wheel_module_state_->is_moving_ == false)
   {
-    if (msg->data == "wheel_pose")
+    if (msg->data != "")
     {
+      std::string pose_name = msg->data;
       // set module of all joints -> this module
       setCtrlModule(module_name_);
 
@@ -255,7 +256,7 @@ void WheelModule::wheelPoseMsgCallback(const std_msgs::String::ConstPtr& msg)
         usleep(8 * 1000);
 
       // parse wheel pose
-      std::string wheel_pose_path = ros::package::getPath("thormang3_wheel_module") + "/data/wheel_pose.yaml";
+      std::string wheel_pose_path = ros::package::getPath("thormang3_wheel_module") + "/data/" + pose_name + ".yaml";
       parseWheelPoseData(wheel_pose_path);
 
       // generate trajectory
