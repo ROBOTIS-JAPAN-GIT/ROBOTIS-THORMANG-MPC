@@ -15,6 +15,7 @@ find_package(catkin REQUIRED COMPONENTS
   robotis_controller
   thormang3_feet_ft_module
   thormang3_base_module
+  thormang3_wheel_module
   thormang3_action_module
   thormang3_head_control_module
   thormang3_manipulation_module
@@ -43,6 +44,7 @@ catkin_package(
     robotis_controller
     thormang3_feet_ft_module
     thormang3_base_module
+    thormang3_wheel_module
     thormang3_action_module
     thormang3_head_control_module
     thormang3_manipulation_module
@@ -61,10 +63,18 @@ add_executable(thormang3_manager src/thormang3_manager.cpp)
 add_dependencies(thormang3_manager ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(thormang3_manager ${catkin_LIBRARIES})
 
+add_executable(thormang3_ndaj_manager src/thormang3_ndaj_manager.cpp)
+add_dependencies(thormang3_ndaj_manager ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(thormang3_ndaj_manager ${catkin_LIBRARIES})
+
 ################################################################################
 # Install
 ################################################################################
 install(TARGETS thormang3_manager
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+  )
+
+install(TARGETS thormang3_ndaj_manager
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
