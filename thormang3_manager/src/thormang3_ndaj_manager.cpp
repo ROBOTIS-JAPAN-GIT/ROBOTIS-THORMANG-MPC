@@ -35,6 +35,9 @@
 #include "thormang3_manipulation_module/manipulation_module.h"
 #include "thormang3_walking_module/walking_module.h"
 #include "thormang3_gripper_module/gripper_module.h"
+#include "thormang3_test_module/test_module.h"
+#include "thormang3_teleop_module/teleop_module.h"
+#include "thormang3_rmc_module/rmc_module.h"
 
 using namespace thormang3;
 
@@ -92,7 +95,11 @@ int main(int argc, char **argv)
 
     // added
     controller->addMotionModule((robotis_framework::MotionModule*)WheelModule::getInstance());
-
+    // added by matsushima
+    controller->addMotionModule((robotis_framework::MotionModule*)TestModule::getInstance());
+    controller->addMotionModule((robotis_framework::MotionModule*)TeleopModule::getInstance());
+    controller->addMotionModule((robotis_framework::MotionModule*)RMCModule::getInstance());
+    
     controller->startTimer();
 
     while(ros::ok())

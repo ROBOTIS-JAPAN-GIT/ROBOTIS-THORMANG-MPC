@@ -57,6 +57,27 @@ public:
   Eigen::MatrixXd calcMassCenter(int joint_id);
   Eigen::MatrixXd calcCenterOfMass(Eigen::MatrixXd mc);
 
+  //add by matsushima
+  void calcTotalMass(void);
+  void calcMassCenter(void);
+  void calcCenterOfMass(void);
+  void calcInertiaC(void);
+  void calcInertiaC(int id);
+  Eigen::MatrixXd calcCenterOfMass(int id);
+  Eigen::Matrix3d cross(Eigen::Vector3d x);
+  Eigen::MatrixXd calcInertiaB(int id);
+  /* Eigen::MatrixXd calcInertiaB(int id,Eigen::Vector3d com); */
+  /* Eigen::MatrixXd calcInertiaC(void); */
+  /* Eigen::MatrixXd calcInertiaC(int id); */
+  void calcForwardKinematics4rmc(int joint_id);
+  Eigen::MatrixXd pInv(Eigen::MatrixXd A);
+  void rmcInit(void);
+  void rmcCalcParam(void);
+  bool calcRMC(Eigen::MatrixXd S,
+               Eigen::VectorXd P_ref,
+               Eigen::VectorXd L_ref,
+               std::vector<Eigen::Matrix<double,6,1>> guzai_i_ref);
+
   void calcJointsCenterOfMass(int joint_id);
 
   void calcForwardKinematics(int joint_ID);
@@ -82,6 +103,25 @@ public:
   double calf_length_m_;
   double ankle_length_m_;
   double leg_side_offset_m_;
+
+  double m_tilde;//全質量 matsushima
+  std::vector<int> MH_id_from = {1,2,15,16};
+  std::vector<int> MH_id_to = {35,34,45,46};
+  std::vector<int> MH_id = {35,34,45,46};
+  Eigen::MatrixXd MH_free;
+  std::vector<int> idx_;
+  Eigen::VectorXi idx;
+  Eigen::Vector3d c_tilde_j = Eigen::VectorXd::Zero(3);
+  double m_tilde_j = 0.0;
+  Eigen::Matrix3d I_tilde_j = Eigen::MatrixXd::Zero(3,3);
+  Eigen::Vector3d r_j;//
+  Eigen::Vector3d m_j;
+  Eigen::Vector3d h_j;  
+  Eigen::Vector3d c_tilde;//全重心位置
+  Eigen::VectorXd th; //現在角度
+  Eigen::Vector3d p_b; //現在のベースリンクの位置
+  Eigen::Vector3d r_B_c;//ボディから全重心への位置ベクトル
+  
 };
 
 }

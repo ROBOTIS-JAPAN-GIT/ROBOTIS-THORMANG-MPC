@@ -65,6 +65,13 @@ public:
   Eigen::MatrixXd orientation_;
   Eigen::MatrixXd transformation_;
 
+  //added by matsushima
+  double m_tilde_;
+  Eigen::VectorXd mass_center_;//(3)
+  Eigen::VectorXd c_tilde_;//(3)
+  Eigen::MatrixXd IB_;//(3,3)
+  Eigen::MatrixXd I_tilde_;//(3,3)
+
 };
 
 }

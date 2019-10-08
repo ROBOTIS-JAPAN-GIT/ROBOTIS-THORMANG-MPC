@@ -462,13 +462,13 @@ r_arm_grip  :   # GRIPPER
    operating_mode        :    3     
    shutdown              :   48    
    #homing_offset        :    0  there is no homming offset in ctrl table of gripper
-   torque_limit          :  250
+   torque_limit          :   50  #250
    max_position_limit    :  750
    min_position_limit    :    0
-   goal_torque           :  250
+   goal_torque           :   25  #250 #10
    goal_velocity         :    0
    goal_acceleration     :    0
-   position_p_gain       :   64
+   position_p_gain       :   20  #64 #16
    velocity_p_gain       :  440
    velocity_i_gain       :   40
        
@@ -499,8 +499,8 @@ r_leg_wh_p  :   # H54-100-S500-R # from
    goal_velocity         : 0
    goal_acceleration     : 0
    position_p_gain       : 32
-   velocity_p_gain       : 360 # default * 2.0
-   velocity_i_gain       : 904 # default * 2.0
+   velocity_p_gain       : 200 # default * 2.0
+   velocity_i_gain       : 14 # default * 2.0
        
 l_leg_wh_p  :   # H54-100-S500-R
    return_delay_time     :  10   
@@ -514,5 +514,5 @@ l_leg_wh_p  :   # H54-100-S500-R
    goal_velocity         : 0
    goal_acceleration     : 0
    position_p_gain       : 32
-   velocity_p_gain       : 360 # default * 2.0
-   velocity_i_gain       : 904 # default * 2.0
+   velocity_p_gain       : 200 # default * 2.0
+   velocity_i_gain       : 14 # default * 2.0

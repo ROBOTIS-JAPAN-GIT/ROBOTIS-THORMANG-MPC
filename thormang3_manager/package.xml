@@ -24,6 +24,9 @@
   <depend>thormang3_head_control_module</depend>
   <depend>thormang3_manipulation_module</depend>
   <depend>thormang3_walking_module</depend>
+  <depend>thormang3_test_module</depend>
+  <depend>thormang3_teleop_module</depend>
+  <depend>thormang3_rmc_module</depend>
   <depend>thormang3_gripper_module</depend>
   <exec_depend>thormang3_description</exec_depend>
   <exec_depend>thormang3_imu_3dm_gx4</exec_depend>

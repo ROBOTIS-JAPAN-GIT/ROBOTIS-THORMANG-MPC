@@ -2,6 +2,10 @@
 Changelog for package thormang3_manager
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.2.1 (2019-10-08)
+------------------
+* Commit matsushima-san's modification
+
 0.2.0 (2018-03-27)
 ------------------
 * modified build option and dependencies configuration

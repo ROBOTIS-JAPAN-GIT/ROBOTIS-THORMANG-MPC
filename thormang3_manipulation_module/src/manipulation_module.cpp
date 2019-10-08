@@ -409,6 +409,8 @@ void ManipulationModule::taskTrajGenerateProc()
     /* set movement time */
     double tol      = 0.1; // m per sec
     double mov_time = 2.0;
+    // double tol      = 1.0; // m per sec
+    // double mov_time = 0.25; //matsushima
 
     double diff     = sqrt(
                           pow(robotis_->thormang3_link_data_[ik_id_end_]->position_.coeff(0,0) - goal_kinematics_pose_msg_.pose.position.x, 2)

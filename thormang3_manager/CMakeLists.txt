@@ -20,6 +20,9 @@ find_package(catkin REQUIRED COMPONENTS
   thormang3_head_control_module
   thormang3_manipulation_module
   thormang3_walking_module
+  thormang3_test_module
+  thormang3_teleop_module
+  thormang3_rmc_module
   thormang3_gripper_module
 )
 
@@ -49,6 +52,9 @@ catkin_package(
     thormang3_head_control_module
     thormang3_manipulation_module
     thormang3_walking_module
+    thormang3_test_module
+    thormang3_teleop_module
+    thormang3_rmc_module
     thormang3_gripper_module
 )
 
